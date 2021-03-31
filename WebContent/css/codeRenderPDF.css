@@ -1,0 +1,96 @@
+/*
+@jbcodefr
+*/
+
+.classcomparisontable
+{
+    border:0px;
+}
+
+.classcomparisontable .header
+{
+    background-color:#EEE;
+    color:red;
+    font-weight:bold;
+}
+
+.classcomparisontable TD
+{
+    text-align:center;
+    padding:5px;
+}
+
+.linenumber
+{
+    display:inline-block;
+    background-color:#EEE;
+    color:black;
+    width:30px;
+    text-align:center;
+    margin-right:8px;
+}
+
+h3
+{
+    padding-left:10px;
+}
+
+@media print
+{
+    .break {page-break-before: always;}
+}
+
+DIV.comment
+{
+    color:green;
+    display:inline-block;
+}
+
+DIV.tab
+{
+    width:50px;
+    display:inline-block;
+}
+
+DIV.keyword
+{
+    color:purple;
+    display:inline-block;
+}
+
+DIV.property
+{
+    color:blue;
+    display:inline-block;
+}
+
+DIV.variables
+{
+    color:blue;
+    display:inline-block;
+}
+
+.code
+{
+    background-color:#EEE;
+    padding:20px !important;
+}
+
+.bignum
+{
+    font-size:110%;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+DIV.keywordsql
+	{
+		color:#0000CD;
+		display:inline-block;
+	}
+
+DIV .commentsql
+	{
+		color:green;
+		display:inline-block;
+	}

@@ -1,0 +1,122 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ghtml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="book">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="h1" minOccurs="1" maxOccurs="1"/>
+              <xs:element name="author" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element type="xs:string" name="documentindex" minOccurs="1" maxOccurs="1"/>
+              <xs:element name="bookBody">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="chapter" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="h2" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="chapterBody" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="paragraph" minOccurs="1" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="h3" minOccurs="1" maxOccurs="1"/>
+                                      <xs:element name="paragraphBody" minOccurs="1" maxOccurs="1">
+                                        <xs:complexType>
+                                          <xs:choice minOccurs="0" maxOccurs="unbounded">
+                                            <xs:element name="p" minOccurs="1"/>
+                                            <xs:element name="gcode" minOccurs="0">
+                                            	<xs:complexType>
+                                                      <xs:simpleContent>
+                                                        <xs:extension base="xs:string">
+                                                          	<xs:attribute type="xs:string" name="language" use="optional"/>
+                                                			<xs:attribute type="xs:string" name="variables" use="optional"/>
+                                                			<xs:attribute type="xs:string" name="props" use="optional"/>
+                                                        </xs:extension>
+                                                      </xs:simpleContent>
+                                                    </xs:complexType>
+                                             </xs:element>
+                                            <xs:element name="dbdiagram">
+                                              <xs:complexType mixed="true">
+                                                <xs:sequence>
+                                                  <xs:element name="dbel" maxOccurs="unbounded" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:simpleContent>
+                                                        <xs:extension base="xs:string">
+                                                          <xs:attribute type="xs:string" name="type" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="name" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="fields" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="left" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="right" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="join" use="optional"/>
+                                                        </xs:extension>
+                                                      </xs:simpleContent>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="ucdiagram">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="actor" maxOccurs="unbounded" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:simpleContent>
+                                                        <xs:extension base="xs:string">
+                                                          <xs:attribute type="xs:string" name="name" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="uses" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="father" use="optional"/>
+                                                        </xs:extension>
+                                                      </xs:simpleContent>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="classdiagram">
+                                              <xs:complexType mixed="true">
+                                                <xs:sequence>
+                                                  <xs:element name="classel" maxOccurs="unbounded" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:simpleContent>
+                                                        <xs:extension base="xs:string">
+                                                          <xs:attribute type="xs:string" name="stereotype" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="type" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="name" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="abstract" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="methods" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="attrs" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="interfaces" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="relation" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="top" use="optional"/>
+                                                          <xs:attribute type="xs:string" name="bottom" use="optional"/>
+                                                        </xs:extension>
+                                                      </xs:simpleContent>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:choice>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

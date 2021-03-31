@@ -1,0 +1,5 @@
+C:\Users\User\eclipse-workspace\GHTML\build\classes\com\generation\ghtml\main
+
+C:\Users\User\eclipse-workspace\GHTML\src\com\generation\ghtml\main
+
+java -classpath "C:\Users\User\eclipse-workspace\GHTMLOffline\bin;C:\Users\User\Desktop\Home\cupboard 'o jars\generation.common.jar" com.generation.ghtml.main.GhtmlRenderer

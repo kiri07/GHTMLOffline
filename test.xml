@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ghtml>
+<book>
+<h1>un libro di prova</h1>
+<author>someone</author>
+<documentindex></documentindex>
+<bookBody>
+<chapter>
+<h2>capitolo di prova</h2>
+<chapterBody>
+<paragraph>
+<h3>Paragrafo di prova</h3>
+<paragraphBody>
+<p>del testo</p>
+<gcode language="SQL">
+--commento
+SELECT * FROM table;
+</gcode>
+<ucdiagram>
+<actor father="true" name="padre" uses="see grades,get informations about son,see report,contact teacher"/>
+<actor name="figlio" uses="see grades"/>
+</ucdiagram>
+<dbdiagram>
+<dbel fields="id int pk,name varchar(200)" name="cust" type="table"/>
+<dbel join="cust.id=order.custid" left="1" right="n" type="rel"/>
+<dbel fields="id int pk,custid int,dishid int" name="order" type="table"/>
+</dbdiagram>
+<classdiagram>
+			<classel abstract="y" attrs="1,2,3,4" interfaces="a,b,c" methods="1,2,3,4" name="genericClass" stereotype="stereotype" type="class"/>
+			<classel bottom="1" relation="depends" top="n" type="relationship"/>
+			<classel abstract="n" attrs="Name,Surname" methods="getName" name="una nuova classe" type="class"/>
+			<classel bottom="1" relation="composes" top="n" type="relationship"/>
+			<classel abstract="n" attrs="Name,Surname" interfaces="d,e,f" methods="getName" name="classe finale" type="class"/>
+</classdiagram>
+</paragraphBody>
+</paragraph>
+</chapterBody>
+</chapter>
+</bookBody>
+</book>
+</ghtml>

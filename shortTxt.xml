@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ghtml>
+<book>
+
+<h1> GHTML </h1>
+<author>
+	@Alessandro Andrea Merlin<br/>
+</author>
+<author>
+	@Roberto Caiozzo<br/>
+</author>
+<author>
+	@Jean Bosco Ninkam Noumssi<br/>
+</author>
+<author>
+	@Joseph Francisco Cubas Ballon<br/>
+</author>
+<author>
+	@Ferdinando Primerano<br/>
+</author>
+<documentindex></documentindex>
+<bookBody>
+<chapter>
+	<h2> Abstract </h2>
+	<chapterBody>
+	<paragraph>
+		<h3> Linee generali </h3>
+			<paragraphBody>			
+				<p>
+					GHTML è un linguaggio e un tool di rendering pensato per rendere più veloce e 
+					immediata la scrittura di testi tecnici e in particolare di testi di programmazione. <br />
+					Si pone come obiettivo la meccanizzazione di una serie di compiti comuni (syntax highlighting, 
+					UML diagrams, realizzazione automatica dell'indice, realizzazione del diagramma del database)
+					che risultano tipicamente dispendiosi in termini di tempo. 
+				</p>
+			</paragraphBody>
+		</paragraph>
+		</chapterBody>
+		</chapter>
+
+		</bookBody>
+		</book>
+		</ghtml>

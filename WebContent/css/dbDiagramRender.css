@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+.dbdiagram
+{
+    display:inline-block;
+    border:solid black 3px;
+    border-radius:5%;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.db.field.name
+{
+    font-weight:bold;
+    text-align:center;
+    border-top-right-radius:5%;
+    border-top-left-radius:5%;
+}
+.dbrel
+{
+	text-align:center;
+}
+
+.sep
+{
+	height:3px;
+	border:none;
+	color:#333;
+	background-color:#333;
+}

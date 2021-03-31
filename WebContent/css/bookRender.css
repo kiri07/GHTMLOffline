@@ -1,0 +1,17 @@
+BODY, DIV
+{
+    font-family:Tahoma;
+}
+
+P
+{
+    text-align:justify;
+    padding:10px;
+}
+
+h2
+{
+    color:blue;
+    background-color:#EEE;
+    padding:10px;
+}

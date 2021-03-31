@@ -1,0 +1,162 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/dbDiagramRender.js"></script>
+<script src="js/ucDiagramRender.js"></script>
+<script src="js/codeRender.js"></script>
+<script src="js/classdiagramRender.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+<link rel="stylesheet" href="css/codeRender.css">
+<link rel="stylesheet" href="css/bookRender.css">
+<link rel="stylesheet" href="css/numberline.css">
+<link rel="stylesheet" href="css/dbDiagramRender.css">
+<link rel="stylesheet" href="css/ucDiagramRender.css">
+<link rel="stylesheet" href="css/classdiagramRender.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css%22%3E">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+<script src="js/starter.js"></script>
+<script  src="js/util/arrowDraw.js"></script>
+</head>
+<body>
+<h1> h1 Java - Supporto al Corso </h1>
+<div style="font-size:30px;padding-top:40px">
+	@Ferdinando Primerano <br />
+	2020/2021
+</div>
+<div class="break">&nbsp;</div>
+<div id="index">
+</div>
+<div class="book">
+<documentindex></documentindex>
+
+<h2> h2 Sono un sottocapitolo </h2>
+<div>
+<h3> h3 sono pi� piccolo ancora </h3>
+<div></div>
+<h3> h3 ehil� </h3>
+<div></div></div>
+<h2> h2 altor sottocapitolo </h2>
+<div>
+<h3> h3 funziona </h3>
+<div></div></div>
+	<h2 > Basi della programmazione </h2>
+	<div>
+		<h3 > Selezione: scegliere fra pi羅 cammini possibili e il costrutto if </h3>
+		<p>
+			I programmi visto fino ad ora sono stati strettamente sequenziali. Le righe sono state 
+			eseguite nell'ordine in cui sono state scritte, in maniera rigida. Il programma non poteva eseguire altre 
+			istruzioni se non quelle, e questo 癡 limitante. 
+			<br />
+			In quasi tutti i casi vorremo che il programma cambi comportamento a seconda dei dati che l'utente inserisce,
+			o delle <i> condizioni </i> che essi <i> verificano </i>. Dovremo poter <i> selezionare </i> delle istruzioni 
+			che verranno eseguite e altre no a seconda del valore delle condizioni (vero / falso).
+		</p>		
+		<p>
+			La prima e pi羅 basilare forma di selezione 癡 il costrutto if. E' anche in assoluto il pi羅 potente e l'unico 
+			di cui avremo veramente bisogno, visto che le altre sono forme di comodo. if lavora valutando una 
+			<i> condizione </i>, vale a dire una espressione booleana che essendo booleana potr� essere solo vera o falsa.
+			<br /> La sua forma generale 癡 la seguente:
+		</p>	
+		<gcode>
+			if(condizione)
+			{
+				//istruzioni se la condizione 癡 vera
+			}
+			else
+			{
+				//istruzioni se la condizione 癡 falsa
+			}
+		</gcode>		
+		<p>
+			Il primo blocco, quello dopo if(condizione), prende il nome di blocco if, o di blocco-vero, e viene eseguito 
+			quando la condizione 癡 vera. E' la sola parte obbligatoria del costrutto. Il secondo blocco, quello dopo 
+			l'else, viene eseguito se la condizione 癡 falsa, e prende il nome di blocco-else o blocco-falso. <br />
+			Per ovvie ragioni, verr� eseguito solo l'uno o l'altro.<br />
+			Ora vediamo una serie di condizioni e di relativi if o if-else:
+		</p>
+		<gcode>
+			if(statura>180)
+			(TAB)System.out.println("Alto");
+			//solo blocco if, niente else, e non servono le graffe perch癡 il blocco if si riduce a una riga
+			//che succede se non 癡 alto? niente. Non verr� eseguita nessuna istruzione e sar� come se l'intero if
+			//non esistesse
+			if(statura>180)
+			(TAB)System.out.println("Alto");
+			else
+			(TAB)System.out.println("Non alto");
+			//blocco if e blocco else. Uno dei due verr� sicuramente eseguito. Anche in questo caso non servono le graffe
+			//si tratta di una sola istruzione per blocco
+			if(statura>180)
+			(TAB)System.out.println("Alto");
+			else
+			{
+				System.out.println("Non alto ma...");
+				if(statura>175)
+				(TAB)System.out.println("Sopra la media");
+				else
+				(TAB)System.out.println("Nella media o sotto");
+				// qui c'� un commento
+			}
+			//blocco if e blocco else. Il blocco else contiene diverse istruzioni e quindi 癡 necessario un blocco di codice.
+			//notiamo che se siamo nell'else, il primo if 癡 falso. Quindi alla seconda riga dell'else noi siamo sicuri 
+			//che la statura sar� sotto il metro e ottanta. Se stiamo eseguendo la terza riga dell'else, la sua 
+			//statura 癡 compresa fra 175 e 180.
+		</gcode>
+		<p>
+			Come abbiamo appena visto gli if-else si possono <i> innestare </i>. Possiamo avere un if dentro un if, senza 
+			problemi, ma dovremo ricordarci che il <i> luogo </i> in cui siamo rifletter� la <i> condizione </i> 
+			in cui ci troviamo. Se siamo nell'else siamo sicuramente sotto o pari a 180 cm, nell'ultimo esempio.
+		</p>
+		<p>
+			Ricordiamo anche, ora come prima, che una condizione 癡 solo una espressione booleana, e posso salvarla 
+			in una variabile e usarla come condizione nell'if:
+		</p>
+		<gcode language="SQL" variables="over180,over175" props="System.out.println">
+			--un commento in sql!
+			SELECT * FROM ciao;
+		</gcode>
+		<dbdiagram>
+			<dbel type="table" name="author" fields="id int pk,egberto,roberto,francesco,name varchar(100),surname varchar(200)" 
+			/>
+			<dbel type="rel" left="1" right="n" join="author.id=book.authorid" />
+			<dbel type="table" name="book" fields="id int,title varchar(100),authorid int" />
+			<dbel type="rel" left="1" right="n" join="author.id=book.authorid" />
+			<dbel type="table" name="book" fields="id int,title varchar(100),authorid int" />
+			
+		</dbdiagram>
+		<gcode language="SQL" variables="over180,over175" props="System.out.println">
+			--un commento in sql!
+			SELECT * FROM ciao;
+		</gcode>
+		<ucdiagram>
+			<actor name="qualcuno" uses="uc1,uc2"></actor>
+			<actor name="aginulfo" uses="uc1,uc2"></actor>
+			<actor name="odoacre" uses="uc1,uc2" father="true"></actor>
+			<actor name="domenega" uses="uc1,uc3"></actor>
+		</ucdiagram>
+		<classdiagram>
+			<classel stereotype="giuseppe" type="class" name="classissima" abstract="y" methods="1,2,3,4" attrs="1,2,3,4" interfaces="a,b,c"></classel>
+			<classel type="relationship" relation="inherit" top="n" bottom="1"></classel>
+			<classel type="class" name="una nuova classe" abstract="n" methods="getName" attrs="Name,Surname"></classel>
+			<classel type="relationship" relation="associates" top="n" bottom="1"></classel>
+			<classel type="class" name="classe ancora" abstract="n" methods="getName" attrs="Name,Surname" interfaces="d,e,f"></classel>
+		</classdiagram>
+		<p>
+			Perlomeno, ha graficato tutto...
+		</p>
+		<ucdiagram>
+			<actor name="gigi" uses="uc1,uc2,uc3"></actor>
+			<actor name="gigio" uses="uc1,uc4,uc5"></actor>
+			<actor name="boris" uses="uc1,uc4,uc5"></actor>
+			<actor name="anatoli" uses="uc1,uc4,uc5"></actor>
+		</ucdiagram>
+		<gcode language="SQL" variables="over180,over175" props="System.out.println">
+			--un commento in sql!
+			SELECT * FROM covidDB where regionname='abruzzo';
+		</gcode>
+	</div>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

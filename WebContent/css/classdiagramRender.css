@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+.classdiagram.object.col-md-3
+{
+	border:solid black 1px;
+	font-weight: bold;
+	background-color: #fAfAfA;
+	padding: 0;
+}
+.classdiagram.interfaces.col-md-4
+{
+	border:solid black 3px;
+	border-radius:100%;
+	font-weight: bold;
+	background-color: #fAfAfA;
+}
+
+.classdiagram.implementation.col-md-4
+{
+	display: flex;
+	align-items: center;
+	transform: rotate(180deg);
+}
+
+.classdiagram.row
+{
+	display: flex;
+	align-items: center;
+}
+
+.classdiagram.relationship.col-md-4
+{
+	display: flex;
+	align-items: center;
+	margin-left: -4%;
+}

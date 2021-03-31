@@ -1,0 +1,41 @@
+@charset "ISO-8859-1";
+.gigio{
+      position:absolute;
+    }
+   .ucrel
+{
+  text-align:center;
+  padding-top:50%;
+} 
+ 
+.ucRow {
+    display: table;
+    width: 75%;
+    table-layout: fixed;
+    border-spacing: 10px;
+  }
+  .actor{
+    text-align:center;
+    vertical-align:middle;
+    font-size:x-large; 
+      display: table-cell;
+      
+      padding: 1rem;
+  }
+  
+  .ucfield
+  { 
+    text-align:center;
+    vertical-align:middle;
+    font-size:xx-large; 
+    display: table-cell;
+      border: solid 1px red;
+      border-radius: 50%;
+      width:35%;
+      padding: 1rem;
+  }
+  .emptycol
+  { 
+
+    display: table-cell;
+  }

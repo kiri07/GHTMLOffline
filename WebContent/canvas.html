@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid black;
+		}
+		input{ 
+			width:400px;
+		}
+		p{ 
+			font-size: bold;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<p>
+		<h4>please insert in the follow order with "," as separator in the first line of input:</h4>
+			<ul>how many actors?</ul>
+			<ul>how many use cases</ul>
+			<ul>ex:2,3</ul>
+			<ul>2 - it's the amount of authors and , 3 - for the number of use cases</ul>
+		<h4>In the second line of input insert the name of the authors in ORDER follow by ","</h4>
+			<ul>EX:<br>			robert,joseph,ferdinando</ul>
+		<h4>In the third line of input insert the name of the use cases in ORDER follow by ","</h4>
+			<ul>EX:<BR>			order food,pay,eat food,etc</ul>	
+		<h4>For the relationship please insert in the follow mode:</h4>
+			<ul>EX: <br>		name of the author1 , name use case, name use case... | name of author2: name use case, name use case...</ul>
+				<ul>THE AUTHORS AND THEYR USE CASES MUST BE SEPARATED BY "," AND THEN MUST BE SEPARATED BY "|"</ul>
+				<h4><ul>please dont use space bar</ul></h4>
+	</p>
+	<div class="wrapper">
+		<form>
+			
+			<input type="text" name="tutto" id="datiPerUCDiagram" placeholder="insert n-author and n-Use Cases"/><br>
+			<input type="text" id="nomiPerAutor" placeholder="insert the name of the authors"/><br>
+			<input type="text" id="nomiPerUC" placeholder="insert the name of the use cases IN ORDER"/><br>
+			<input type="text" id="relazioneUCDiagram" placeholder="remember to separate with |"/>
+			<!--
+				<input id="numberOfActors" type="number" name="actors" placeholder="how many actors?"/>
+				
+
+			
+				<input id="numberOfUseCases" type="number" name="useCase" placeholder="how many cases?"/>
+			-->
+				<div class="form-box">
+		            <button  id="button-send">Send</button>
+		        </div>
+		</form>
+	</div>
+
+
+	<canvas></canvas>
+	<script type="text/javascript" src="js/canvas.js"></script>
+</body>
+</html>

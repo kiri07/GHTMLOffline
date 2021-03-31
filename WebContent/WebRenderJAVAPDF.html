@@ -1,0 +1,112 @@
+<!--
+@jbcodefr
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WebRenderJAVAPDF</title>
+
+    <script src="js/codeRenderPDF.js"></script>
+    <link rel="stylesheet" href="css/codeRenderPDF.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <script>
+        $(document).ready(function() {
+            //codice per il Preview
+            $("#inputted").click(function() {
+                var language = $(this).attr('language');
+                language = language ? language : "Java";
+                var variables = $(this).attr('variables') ? $(this).attr('variables').split(",") : [];
+                var props = $(this).attr('props') ? $(this).attr('props').split(",") : [];
+
+                var text = $('.textarea').val();
+                if (text.length==0){
+                    $(".previewed").html("<p class='bg-warning'>Si prega di aggiungere il codice prima dell'anteprima <i class=\"far fa-laugh-wink\"></i></p>");
+                }
+                else{
+                    $(".previewed").html(CodeRenderer[language].render(text+"<br>",variables, props));
+                }
+            });
+            //codice per il stampa in PDF
+            $("#convert").click(function() {
+
+                var text = $('.textarea').val();
+
+                var language = $(this).attr('language');
+                language = language ? language : "Java";
+                var variables = $(this).attr('variables') ? $(this).attr('variables').split(",") : [];
+                var props = $(this).attr('props') ? $(this).attr('props').split(",") : [];
+                if (text.length==0){
+                    $(".previewed").html("<p class='bg-warning'>Si prega di aggiungere il codice prima dell'anteprima <i class=\"far fa-laugh-wink\"></i></p>");
+                }
+                else{
+                    $(".previewed").html(CodeRenderer[language].render(text+"<br>",variables, props));
+                    text = $('.previewed').html();
+                    html2pdf().from(text).save();
+                }
+                console.log(text);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"> JavaCode => PDF </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="WebRendererSQLPDF.html">SQL=>PDF</a>
+            </li>
+            <li class="nav-item">
+                <!--todo -->
+                <!-- qui va aggiunto il link per la pagina principale  -->
+                <!-- in questo caso la pagina principale è Page.html  -->
+                <!-- <a class="nav-link" href="Page.html">Home</a> -->
+            </li>
+        </ul>
+        <span class="navbar-text">
+     <h1>V.1.0</h1>
+    </span>
+    </div>
+</nav>
+
+<h4 class="bg-info">Il codice deve essere simile a questo <i class="far fa-smile-wink"></i></h4>
+
+<!-- Un esempio del codice  -->
+<div class="code">
+  <p class="bg-warning"> <span>//</span> La prima riga deve essere vuota (Oppure premere INVIO prima di incollare)</p>
+    if(condizione)<br>
+    {<br>
+    <span>//</span>istruzioni se la condizione ç¡ vera<br>
+    }<br>
+    else<br>
+    {<br>
+    <span>//</span>istruzioni se la condizione ç¡ falsa<br>
+    }<br>
+</div>
+
+<!-- Zona di input per il codice  -->
+<div class="form-group">
+    <label for="exampleFormControlTextarea3">Inserisci il codice qui:</label>
+    <textarea class="form-control textarea bg-light border border-info rounded-3" id="exampleFormControlTextarea3" rows="7" placeholder="La prima riga deve essere vuota (premere INVIO prima di incollare)"></textarea>
+</div>
+
+<button class="btn btn-primary hidden" id="convert">Convert To PDF</button>
+<button class="btn btn-success" id="inputted">Preview</button>
+
+<!-- Qui vienne stampato il codice  -->
+<p class="previewed bg-light" id="codepdf"> </p>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
